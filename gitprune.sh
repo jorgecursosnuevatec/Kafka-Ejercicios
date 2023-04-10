@@ -14,7 +14,7 @@ PushLog="/dev/null"
 # Mensaje
 message=$@
 if [ -z "$message" ]; then
-message="$(date)2023-04-10 PRIMERA SUBIDA KAFKA "
+message="$(date)2023-04-10 Terminado productor"
 fi
 
 start=`date +%s`
