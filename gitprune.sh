@@ -14,7 +14,7 @@ PushLog="/dev/null"
 # Mensaje
 message=$@
 if [ -z "$message" ]; then
-message="$(date)2023-04-10 Terminado productor"
+message="$(date)2023-04-11 QUITADO EJERCICIO DE ANTONIO,NO FUNCIONA"
 fi
 
 start=`date +%s`
