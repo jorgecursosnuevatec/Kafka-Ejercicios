@@ -1,5 +1,15 @@
 package com.sacavix.events;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Enum EventType.
+ */
 public enum EventType {
-	CREATED, UPDATED, DELETED
+	
+	/** The created. */
+	CREATED, 
+ /** The updated. */
+ UPDATED, 
+ /** The deleted. */
+ DELETED
 }

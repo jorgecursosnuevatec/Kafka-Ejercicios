@@ -6,11 +6,18 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+// TODO: Auto-generated Javadoc
+/** The Constant log. */
 @Slf4j
 @Component
 public class
 CustomerEventsService {
 
+	/**
+	 * Consumer.
+	 *
+	 * @param event the event
+	 */
 	@KafkaListener(
 			topics = "${topic.customer.name:customers}",
 			containerFactory = "kafkaListenerContainerFactory",

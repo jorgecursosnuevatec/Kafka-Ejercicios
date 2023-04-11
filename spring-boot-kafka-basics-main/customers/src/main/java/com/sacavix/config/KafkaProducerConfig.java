@@ -16,26 +16,46 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class KafkaProducerConfig.
+ * 
+ * CONFIGURACION DEL PRODUCTOR
+ */
 @Configuration
 public class KafkaProducerConfig {
 	
+	/** The bootstrap address. */
 	private final String bootstrapAddress = "localhost:9092";
 	
+    /**
+     * Producer factory.
+     * DEVUELVE UN OBJETO CON LA KEY Y EL VALUE DEL MENSAJE
+     * ES EL PRODUCTOR DE KAFKA
+     *
+     * @return the producer factory
+     */
     @Bean
     public ProducerFactory<String, Event<?>> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(
           ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, 
-          bootstrapAddress);
+          bootstrapAddress);//DIRECCION DEL BUS DE MENSAJES DE KAFKA
         configProps.put(
           ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, 
-          StringSerializer.class);
+          StringSerializer.class); //LLAVE CON LA QUE VAMOS A SERIALIZAR
         configProps.put(
         	      ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, 
-        	      JsonSerializer.class);
+        	      JsonSerializer.class); //CONFIGURACION DEL OBJETO QUE VAMOS A SERIALIZAR
         return new DefaultKafkaProducerFactory<>(configProps);
     }
 
+    /**
+     * Kafka template.
+     * ESTA CLASE PERMITE UTILIZAR LOS METODOS ,LOS ENVIA CON SEND
+     *
+     * @return the kafka template
+     */
     @Bean
     public KafkaTemplate<String, Event<?>> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());

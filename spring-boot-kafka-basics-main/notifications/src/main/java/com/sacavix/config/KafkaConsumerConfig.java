@@ -15,12 +15,24 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import java.util.HashMap;
 import java.util.Map;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class KafkaConsumerConfig.
+ * CONFIGURACION DEL CLIENTE QUE RECIBE EL MENSAJE
+ * 
+ */
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
 	
+	/** The bootstrap address. */
 	private final String bootstrapAddress = "localhost:9092";
 
+    /**
+     * Consumer factory.
+     *
+     * @return the consumer factory
+     */
     @Bean
     public ConsumerFactory<String, Event<?>> consumerFactory() {
         Map<String, String> props = new HashMap<>();
@@ -36,6 +48,11 @@ public class KafkaConsumerConfig {
                 jsonDeserializer);
     }
 
+    /**
+     * Kafka listener container factory.
+     *
+     * @return the concurrent kafka listener container factory
+     */
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, Event<?>>
     kafkaListenerContainerFactory() {

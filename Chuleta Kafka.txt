@@ -2,6 +2,7 @@ VIDEO ANTONIO MARTIN
 https://www.youtube.com/watch?v=EDQW5UP2wCI
 
 video https://www.youtube.com/watch?v=1dvCwFgHZCk
+MINUTO 23
 
 
 -En el raiz donde esta instalado kafka iniciamos el servidor de zookeeper,por defecto en el 2181
