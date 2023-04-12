@@ -14,7 +14,7 @@ PushLog="/dev/null"
 # Mensaje
 message=$@
 if [ -z "$message" ]; then
-message="$(date)2023-04-11 QUITADO EJERCICIO DE ANTONIO,NO FUNCIONA"
+message="$(date)2023-04-12 DOCUMENTACION KAFKA INTERNET"
 fi
 
 start=`date +%s`

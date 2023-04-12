@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-// TODO: Auto-generated Javadoc
+
 /** The Constant log. */
 @Slf4j
 @Component
@@ -25,9 +25,17 @@ CustomerEventsService {
 	public void consumer(Event<?> event) {
 		if (event.getClass().isAssignableFrom(CustomerCreatedEvent.class)) {
 			CustomerCreatedEvent customerCreatedEvent = (CustomerCreatedEvent) event;
-			log.info("Received Customer created event .... with Id={}, data={}",
+			log.info("Recibido en CustomerEventsService creado evento .... with Id={}, data={}",
 					customerCreatedEvent.getId(),
 					customerCreatedEvent.getData().toString());
+			
+			log.info("Datos del evento-> Id={} ,Date={} , Type={}",
+					event.getId(),
+					event.getDate(),
+					event.getType());
+			
+			
+			
 		}
 
 	}
